@@ -24,6 +24,7 @@ function isLoginUnique(logins, login) {
 
 function addLogin(login) {
   if (isLoginValid(login) && isLoginUnique(logins, login)) {
+    logins.push(login);
     message = 'Логин успешно добавлен!';
   }
   return alert(message);
