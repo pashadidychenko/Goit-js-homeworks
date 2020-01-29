@@ -1,21 +1,9 @@
-console.log('Start Game');
-let value = Math.random() * 100;
-value = Math.round(value);
-
-let userValue;
-do {
-  userValue = prompt('pleas enter value');
-  if (userValue === null) {
-    break;
+const logItems = function logItems(array) {
+  for (let i = 0; i < array.length; i += 1) {
+    console.log(`${i + 1} - ${array[i]}`);
   }
-  userValue = Number.parseInt(userValue);
+};
 
-  if (value < userValue) {
-    alert('Задумане число менше', userValue);
-  }
-  if (value > userValue) {
-    alert('Задумане число більше', userValue);
-  }
-} while (userValue !== value);
+logItems(['Mango', 'Poly', 'Ajax', 'Lux', 'Jay', 'Kong']);
 
-alert('Ви вгадали, число', userValue);
+logItems([5, 10, 15, 20, 25, 30, 35, 40, 45, 50]);

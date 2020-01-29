@@ -2,13 +2,19 @@ console.log('Task 3');
 
 const ADMIN_PASSWORD = 'jqueryismyjam';
 let message = prompt('Please enter password');
+const hello = 'Добро пожаловать!';
+const denied = 'Доступ запрещен, неверный пароль!';
+const cenceled = 'Отменено пользователем!';
 
 if (message === null) {
-  console.log((message = 'Отменено пользователем!'));
+  message = cenceled;
+  console.log(cenceled);
 } else if (message === ADMIN_PASSWORD) {
-  console.log((message = 'Добро пожаловать!'));
+  message = hello;
+  console.log(hello);
 } else {
-  console.log((message = 'Доступ запрещен, неверный пароль!'));
+  message = denied;
+  console.log(denied);
 }
 
 alert(message);

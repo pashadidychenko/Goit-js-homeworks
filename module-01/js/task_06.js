@@ -2,12 +2,13 @@ console.log('Task 6');
 
 let total = 0;
 let input;
+const ENTER_NUMBER = 'Введите число';
 
-while (true) {
-  input = +(prompt('Введите число', '') * 10);
+while (input !== Number) {
+  input = +(prompt(ENTER_NUMBER, '') * 10);
   if (input === 0) break;
   if (Number.isNaN(input)) {
-    alert('Введите целое число');
+    alert(ENTER_NUMBER);
   } else {
     total += input;
   }
