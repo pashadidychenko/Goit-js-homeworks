@@ -16,5 +16,6 @@ module.exports = {
     'no-console': 'off',
     'linebreak-style': 'off',
     'space-before-function-paren': 'warn',
+    'arrow-parens': 'warn',
   },
 };

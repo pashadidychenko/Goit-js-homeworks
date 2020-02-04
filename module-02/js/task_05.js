@@ -3,7 +3,6 @@ const checkWordSecond = 'sale';
 
 const checkForSpam = function checkForSpam(message) {
   const lowerMessage = message.toLowerCase();
-  console.log(lowerMessage);
   return lowerMessage.includes(checkWordOne) || lowerMessage.includes(checkWordSecond);
 };
 
