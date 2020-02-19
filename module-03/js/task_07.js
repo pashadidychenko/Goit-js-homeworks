@@ -23,9 +23,7 @@ const account = {
   // Метод создает и возвращает объект транзакции. Принимает сумму и тип транзакции.
 
   createTransaction(id, amount, type) {
-    idCounter += 1;
-    this.transactions.push({ id: idCounter, type, amount });
-    return { id: idCounter, type, amount };
+    return this.transactions.push({ id: id + 100, type, amount });
   },
 
   /*
@@ -63,8 +61,10 @@ const account = {
   // Метод ищет и возвращает объект транзации по id
 
   getTransactionDetails(id) {
-    if (this.transactions[id - 1] !== undefined) {
-      return this.transactions[id - 1];
+    for (const key of this.transactions) {
+      if (key.id === id) {
+        return key;
+      }
     }
     return `id: ${id} - ${noTransaction}`;
   },
@@ -89,11 +89,11 @@ console.log(account.deposit(200));
 console.log(account.withdraw(10));
 console.log(account.withdraw(3000));
 console.log(account.getBalance());
-console.log(account.getTransactionDetails(0));
+console.log(account.getTransactionDetails(101));
 console.log(account.getTransactionDetails(1));
-console.log(account.getTransactionDetails(3));
-console.log(account.getTransactionDetails(2));
-console.log(account.getTransactionDetails(4));
+console.log(account.getTransactionDetails(103));
+console.log(account.getTransactionDetails(102));
+console.log(account.getTransactionDetails(300));
 console.log(account.getTransactionTotal(Transaction.WITHDRAW));
 console.log(account.getTransactionTotal(Transaction.DEPOSIT));
 console.log(account.transactions);

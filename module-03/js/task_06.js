@@ -8,9 +8,19 @@ const products = [
 ];
 
 const calculateTotalPrice = function(products, productName) {
-  const chosenProduct = products.find(product => product.name === productName);
-  return chosenProduct.price * chosenProduct.quantity;
+  let sum = 0;
+  for (const key of products) {
+    if (key.name === productName) {
+      sum = key.price * key.quantity;
+    }
+  }
+  return sum;
 };
+
+// const calculateTotalPrice = function(products, productName) {
+//   const chosenProduct = products.find(product => product.name === productName);
+//   return chosenProduct.price * chosenProduct.quantity;
+// };
 
 console.log(calculateTotalPrice(products, 'Радар')); // 5200
 console.log(calculateTotalPrice(products, 'Дроид')); // 2800

@@ -6,10 +6,19 @@ const products = [
   { name: 'Дроид', price: 400, quantity: 7 },
   { name: 'Захват', price: 1200, quantity: 2 },
 ];
-
 const getAllPropValues = function(arr, prop) {
-  return arr.map(key => key[prop]);
+  const newArr = [];
+  for (const key of arr) {
+    if (key[prop] !== undefined) {
+      newArr.push(key[prop]);
+    }
+  }
+  return newArr;
 };
+
+// const getAllPropValues = function(arr, prop) {
+//   return arr.map(key => key[prop]);
+// };
 
 console.log(getAllPropValues(products, 'name')); // ['Радар', 'Сканер', 'Дроид', 'Захват']
 

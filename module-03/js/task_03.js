@@ -1,19 +1,25 @@
 console.log('task_03');
 
+// const findBestEmployee = function(employees) {
+//   return Object.keys(employees).find(
+//     key => employees[key] === Math.max(...Object.values(employees)),
+//   );
+// };
+
 const findBestEmployee = function(employees) {
-  return Object.keys(employees).find(
-    key => employees[key] === Math.max(...Object.values(employees)),
-  );
+  for (const key in employees) {
+    if (employees[key] === Math.max(...Object.values(employees))) return key;
+  }
 };
 
 console.log(
   findBestEmployee({
     ann: 29,
-    david: 35,
+    david: 3500,
     helen: 1,
     lorence: 99,
   }),
-); // lorence
+); // david
 
 console.log(
   findBestEmployee({
