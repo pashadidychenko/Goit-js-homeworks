@@ -1,3 +1,5 @@
+console.log('task_05');
+
 class Car {
   /*
    * Добавь статический метод `getSpecs(car)`,
