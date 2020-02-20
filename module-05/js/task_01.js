@@ -1,8 +1,8 @@
 console.log('task_01');
 
-const Account = function Account(obj) {
-  this.login = obj.login;
-  this.email = obj.email;
+const Account = function Account({ login, email }) {
+  this.login = login;
+  this.email = email;
 };
 
 Account.prototype.getInfo = function getInfo() {

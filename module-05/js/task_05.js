@@ -47,7 +47,7 @@ class Car {
    */
 
   turnOn() {
-    return (this.isOn = true);
+    this.isOn = true;
   }
 
   /*
@@ -69,9 +69,8 @@ class Car {
 
   accelerate(value) {
     if (this.speed + value < this.maxSpeed) {
-      return (this.speed = this.speed + value);
+      this.speed = this.speed + value;
     }
-    return (this.speed = this.maxSpeed);
   }
 
   /*
@@ -81,9 +80,8 @@ class Car {
 
   decelerate(value) {
     if (this.speed - value > 0) {
-      return (this.speed = this.speed - value);
+      this.speed = this.speed - value;
     }
-    return (this.speed = 0);
   }
 
   /*
@@ -95,7 +93,6 @@ class Car {
     if (this.isOn === true) {
       this.distance = this.distance + this.speed * hours;
     }
-    return this.isOn;
   }
 }
 
@@ -108,7 +105,6 @@ mustang.drive(2);
 Car.getSpecs(mustang);
 console.log(Car.getSpecs(mustang));
 // maxSpeed: 200, speed: 50, isOn: true, distance: 100, price: 2000
-
 mustang.decelerate(20);
 mustang.drive(1);
 mustang.turnOff();

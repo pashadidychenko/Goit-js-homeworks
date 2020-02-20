@@ -12,7 +12,7 @@ class Storage {
 
   //  получает новый товар и добавляет его к текущим
   addItem(item) {
-    return this.items.push(item);
+    this.items.push(item);
   }
 
   //  получет товар и, если он есть, удаляет его из текущих
@@ -20,7 +20,7 @@ class Storage {
     if (this.items.includes(item)) {
       this.items.splice(this.items.indexOf(item), 1);
     }
-    return this.items;
+    this.items;
   }
 }
 
