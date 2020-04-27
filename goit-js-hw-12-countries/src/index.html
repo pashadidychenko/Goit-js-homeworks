@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+    <title>Home work 12</title>
+  </head>
+  <body>
+    <h1 class="title">Start enter country</h1>
+    <input type="text" id="input" class="inputText" />
+    <div id="countryList">
+      <template id="templateList">
+        {{#each this}}
+        <h2>{{this.name}}</h2>
+        <ul class="coutryList">
+          <li>
+            <ul>
+              <li><b>Capital:</b> {{this.capital}}</li>
+              <li><b>Population:</b> {{this.population}}</li>
+              <li>
+                <b>Languages:</b>
+                <ul>
+                  {{#each this.languages}}
+                  <li><i>{{this.name}}</i></li>
+                  {{/each}}
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <img
+              src="{{this.flag}}"
+              alt="flag {{this.name}}"
+              width="150px"
+              height="100px"
+            />
+          </li>
+        </ul>
+        {{/each}}
+      </template>
+      <template id="findList">
+        {{#each this}}
+        <ul>
+          <li class="findList">{{this.name}}</li>
+        </ul>
+        {{/each}}
+      </template>
+    </div>
+  </body>
+</html>
